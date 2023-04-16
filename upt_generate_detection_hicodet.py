@@ -119,7 +119,7 @@ if __name__ == '__main__':
     
     parser = argparse.ArgumentParser()
     
-    parser.add_argument("--base_dir", default="../VIPLO", type=str)
+    parser.add_argument("--base_dir", default="./", type=str)
     
     parser.add_argument('--lr-head', default=1e-4, type=float)
     parser.add_argument('--batch-size', default=2, type=int)
@@ -128,8 +128,8 @@ if __name__ == '__main__':
     parser.add_argument('--lr-drop', default=10, type=int)
     parser.add_argument('--clip-max-norm', default=0.1, type=float)
 
-    parser.add_argument('--backbone', default='resnet50', type=str)
-    parser.add_argument('--dilation', action='store_true')
+    parser.add_argument('--backbone', default='resnet101', type=str)
+    parser.add_argument('--dilation', action='store_true', default=True)
     parser.add_argument('--position-embedding', default='sine', type=str, choices=('sine', 'learned'))
 
     parser.add_argument('--repr-dim', default=512, type=int)
@@ -164,7 +164,7 @@ if __name__ == '__main__':
                         help='device to use for training / testing')
     parser.add_argument('--port', default='1234', type=str)
     parser.add_argument('--seed', default=66, type=int)
-    parser.add_argument('--pretrained', default='', help='Path to a pretrained detector')
+    parser.add_argument('--pretrained', default='upt/checkpoints/detr-r101-dc5-hicodet.pth', help='Path to a pretrained detector')
     parser.add_argument('--resume', default='', help='Resume from a model')
     parser.add_argument('--output-dir', default='checkpoints')
     parser.add_argument('--print-interval', default=500, type=int)
