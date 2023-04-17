@@ -1,7 +1,7 @@
 import argparse
 import os
 import sys
-sys.path.append('detr')
+sys.path.append('upt/detr')
 from models import build_model
 import torch
 import random
