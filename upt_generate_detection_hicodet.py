@@ -179,6 +179,4 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
     print(args)
-    with open("parser.json", "w") as f:
-        json.dump(args.__dict__, f)
     main(args)
